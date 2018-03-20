@@ -1,6 +1,5 @@
 USE codeup_test_db;
 
-/*
 drop table albums if exists;
 create table albums(
 id int not null auto_increment,
@@ -10,7 +9,9 @@ release_date date,
 sales float,
 genre varchar(100),
 content text not null,
-primary key(id)); */
+primary key(id),
+unique (artist,name)
+);
 
 /* create table contacts(
 id INT NOT NULL AUTO_INCREMENT,
