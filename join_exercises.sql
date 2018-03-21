@@ -59,3 +59,42 @@ select concat(e.first_name, " ", e.last_name) as "Employee Name",
   join employees as m
     on m.emp_no = dept_manager.emp_no
  where dept_emp.to_date like "9999%" and dept_manager.to_date like "9999%";
+
+select gender, avg(salary)
+  from employees
+  join salaries
+    on salaries.emp_no = employees.emp_no
+  join dept_manager
+    on dept_manager.emp_no = employees.emp_no
+   where salaries.to_date like "9999%"
+   and dept_manager.to_date like "9999%"
+   group by gender;
+
+select gender, avg(salary)
+  from employees
+  join salaries
+    on salaries.emp_no = employees.emp_no
+  join dept_manager
+    on dept_manager.emp_no = employees.emp_no
+   group by gender;
+
+select gender, avg(salary)
+  from employees
+  join salaries
+    on salaries.emp_no = employees.emp_no
+  join dept_emp
+    on dept_emp.emp_no = employees.emp_no
+   where salaries.to_date like "9999%"
+   and dept_emp.to_date like "9999%"
+   group by gender;
+
+select gender, avg(salary)
+  from employees
+  join salaries
+    on salaries.emp_no = employees.emp_no
+  join dept_emp
+    on dept_emp.emp_no = employees.emp_no
+   group by gender;
+
+
+
