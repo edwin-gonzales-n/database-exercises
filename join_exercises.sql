@@ -60,6 +60,7 @@ select concat(e.first_name, " ", e.last_name) as "Employee Name",
     on m.emp_no = dept_manager.emp_no
  where dept_emp.to_date like "9999%" and dept_manager.to_date like "9999%";
 
+/* ---  BONUSES  ---- */
 select gender, avg(salary)
   from employees
   join salaries
@@ -95,6 +96,3 @@ select gender, avg(salary)
   join dept_emp
     on dept_emp.emp_no = employees.emp_no
    group by gender;
-
-
-
